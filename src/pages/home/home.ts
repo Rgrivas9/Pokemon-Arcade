@@ -104,5 +104,6 @@ export const home = (pokemonList: Pokemon[],types:string[][]): void => {
     const record: string[] = getItem(`${getItem("userPK")}records`).split(',')
     record[3]=colour
     setItem(`${getItem("userPK")}records`,record.toString())
+    setItem('colorPK',colour)
   });
 };
