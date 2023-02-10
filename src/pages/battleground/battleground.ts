@@ -161,17 +161,11 @@ export const battleground = (pokemonList: Pokemon[]): void => {
       const average2: number =
         (poke2.stats[1].base + poke2.stats[2].base + poke2.stats[5].base) / 3;
       let average: number = average2 - average1;
+      if (average < 0) {
+        average = 5;
+      }
       if (average < 15) {
-        average = average+15;
-      }
-      if (average > 15 && average < 30) {
-        average = average+9;
-      }
-      if (average > 30 && average < 35) {
-        average = average+4;
-      }
-      if (average > 35 && average < 40) {
-        average = average+2;
+        average = average+10;
       }
       let scored: number = parseInt(
         localStorage.getItem("scorePoke") as string

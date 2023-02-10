@@ -152,9 +152,13 @@ export const pokeapi = (pokemonList: Pokemon[]) => {
           record[2]=getItem('PKRecordHard')
           setItem(`${getItem("userPK")}records`,record.toString())
         }
+        
       }
       difficultyBtn.removeAttribute("disabled");
       pokeapi(pokemonList);
+      navH2.innerHTML = `RECORD: ${
+        localStorage.getItem(`PKRecord${localStorage.getItem("PKDif")}`) as string
+      }`
     }
   });
   returnBtn.appendChild(exitImg);
