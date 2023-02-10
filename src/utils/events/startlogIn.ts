@@ -11,6 +11,7 @@ export const startlogIn = (
   pokemonList:Pokemon[],
   types:string[][]
 ) => {
+  if (input!=''){
   setItem("userPK", input);
   const startBtn=document.querySelector<HTMLButtonElement>('.startLogin') as HTMLButtonElement
   startBtn.setAttribute('disabled','true')
@@ -30,5 +31,5 @@ export const startlogIn = (
   main.appendChild(video);
   setTimeout(() => {
     home(pokemonList,types);
-  }, 4500);
+  }, 4500);} else {alert('Debes introducir un usuario!!')}
 };

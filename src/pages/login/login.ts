@@ -127,4 +127,10 @@ export const login = (pokemonList: Pokemon[]): void => {
     body.setAttribute('class',colour)
     setItem('colorPK',colour)
   });
+  window.addEventListener("keydown", (ev) => {
+    if (localStorage.getItem('pagePK')=='login'){
+    if (ev.which === 13) {
+      btnSwitch.setAttribute('disabled','true')
+      startlogIn(input.value, main, logout, pokemonList,types)}}
+  });
 };
