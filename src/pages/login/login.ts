@@ -25,6 +25,7 @@ export const login = (pokemonList: Pokemon[]): void => {
     "body"
   ) as HTMLBodyElement;
   clean(body);
+  setItem('pagePK','login')
   /* ---------------------------------------------------------SETEAMOS EL COLOR ELEGIDO POR EL USUARIO */
   const typelist: string[][] = [];
   const types: string[][] = [];
