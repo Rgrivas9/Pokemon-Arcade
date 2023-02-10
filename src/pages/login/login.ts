@@ -25,7 +25,7 @@ export const login = (pokemonList: Pokemon[]): void => {
     "body"
   ) as HTMLBodyElement;
   clean(body);
-  setItem('pagePK','login')
+  setItem("pagePK", "login");
   /* ---------------------------------------------------------SETEAMOS EL COLOR ELEGIDO POR EL USUARIO */
   const typelist: string[][] = [];
   const types: string[][] = [];
@@ -46,9 +46,13 @@ export const login = (pokemonList: Pokemon[]): void => {
   if (record) {
     body.setAttribute("class", record.split(",")[3]);
   } else {
-    const color:string[]=types[globalRandomNumber(types.length) - 1]
-    color.length==1 ? body.setAttribute('class',color[0]) : body.setAttribute('class',color.join(''))
-    color.length==1 ? setItem('colorPK',color[0]) : setItem('colorPK',color.join(''))
+    const color: string[] = types[globalRandomNumber(types.length) - 1];
+    color.length == 1
+      ? body.setAttribute("class", color[0])
+      : body.setAttribute("class", color.join(""));
+    color.length == 1
+      ? setItem("colorPK", color[0])
+      : setItem("colorPK", color.join(""));
   }
 
   /* ---------------------------------------------------------SETEAMOS EL LUGAR EN EL LOCAL STORAGE */
@@ -96,7 +100,7 @@ export const login = (pokemonList: Pokemon[]): void => {
   main.appendChild(divInput);
   main.appendChild(startButton);
   /* ---------------------------------------------------------FOOTER */
- 
+
   const anchor1: HTMLAnchorElement = ImgAnchor(
     "github",
     "https://github.com/Rgrivas9",
@@ -116,22 +120,22 @@ export const login = (pokemonList: Pokemon[]): void => {
   footer.appendChild(anchor1);
   footer.appendChild(anchor2);
   /* ---------------------------------------------------------LISTENERS */
-  startButton.addEventListener("click", () =>{
-    btnSwitch.setAttribute('disabled','true')
-    startlogIn(input.value, main, logout, pokemonList,types)}
-  );
+  startButton.addEventListener("click", () => {
+    startlogIn(input.value, main, logout, pokemonList, types);
+  });
   logout.addEventListener("click", () => logOut([input], [welcome, logout]));
   btnSwitch.addEventListener("click", () => {
-    const color:string[]=types[globalRandomNumber(types.length) - 1]
-    let colour:string=''
-    color.length==1 ? colour=color[0] : colour=color.join('')
-    body.setAttribute('class',colour)
-    setItem('colorPK',colour)
+    const color: string[] = types[globalRandomNumber(types.length) - 1];
+    let colour: string = "";
+    color.length == 1 ? (colour = color[0]) : (colour = color.join(""));
+    body.setAttribute("class", colour);
+    setItem("colorPK", colour);
   });
   window.addEventListener("keydown", (ev) => {
-    if (localStorage.getItem('pagePK')=='login'){
-    if (ev.which === 13) {
-      btnSwitch.setAttribute('disabled','true')
-      startlogIn(input.value, main, logout, pokemonList,types)}}
+    if (localStorage.getItem("pagePK") == "login") {
+      if (ev.which === 13) {
+        startlogIn(input.value, main, logout, pokemonList, types);
+      }
+    }
   });
 };
