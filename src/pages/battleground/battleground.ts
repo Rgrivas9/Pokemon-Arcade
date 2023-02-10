@@ -135,7 +135,7 @@ export const battleground = (pokemonList: Pokemon[]): void => {
   mainDiv.appendChild(mainDivOp);
   mainDiv.appendChild(mainDivYou);
   body.appendChild(mainDiv);
-
+  
   const attackNav: HTMLElement = document.createElement("nav");
   attackNav.setAttribute("class", "attackNav");
   localStorage.setItem("HP1", poke1.stats[0].base.toString());
@@ -208,7 +208,6 @@ export const battleground = (pokemonList: Pokemon[]): void => {
               poke2.stats[0].base
           )}%`
         );
-        console.log(average);
         scored = Math.round(
           scored +
             (hp2pre - parseInt(localStorage.getItem("HP2") as string)) *

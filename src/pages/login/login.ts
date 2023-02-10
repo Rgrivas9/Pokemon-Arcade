@@ -41,7 +41,6 @@ export const login = (pokemonList: Pokemon[]): void => {
       }
     }
   }
-  console.log(types);
   const record: string = getItem(`${getItem("userPK")}records`);
   if (record) {
     body.setAttribute("class", record.split(",")[3]);
@@ -96,6 +95,7 @@ export const login = (pokemonList: Pokemon[]): void => {
   main.appendChild(divInput);
   main.appendChild(startButton);
   /* ---------------------------------------------------------FOOTER */
+ 
   const anchor1: HTMLAnchorElement = ImgAnchor(
     "github",
     "https://github.com/Rgrivas9",
