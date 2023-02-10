@@ -478,6 +478,7 @@ export const pokeapi = (pokemonList: Pokemon[]) => {
     divDiv2Btn.classList.remove("fightPokemons");
   });
   divDiv2Btn.addEventListener("click", () => {
+    window.removeEventListener("scroll", stickyPK);
     battleground(pokemonList);
     localStorage.setItem("Pokeapi", "false");
     difficultyBtn.setAttribute("disabled", "true");
