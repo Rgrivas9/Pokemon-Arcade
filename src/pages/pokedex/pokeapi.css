@@ -30,7 +30,7 @@
     rgba(176, 88, 160, 1) 100%
   );
   padding: 1rem 2rem;
-  min-width: 650px;
+  min-width: 100vw;
 }
 .Pokemon nav img {
   width: 40px;
@@ -40,8 +40,7 @@
   justify-content: space-between;
   background-color: rgba(0, 0, 0, 0.829);
   height: 200px;
-  min-width: 650px;
-  transition: all 5s ease-in-out;
+  min-width: 100vw;
 }
 .divHeaderSticky {
   position: fixed;
@@ -334,7 +333,6 @@
   bottom: 14px;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.438);
-  
 }
 .pokeSection .ulstatsDiv {
   display: flex;
@@ -379,12 +377,13 @@
   width: 110%;
   padding-right: 30px;
 }
-.movesUl{
+.movesUl {
   height: 200px;
-overflow: scroll;
-overflow-x: hidden;
-scrollbar-width: 3px;
-scrollbar-color: rgba(0, 0, 0, 0.589);}
+  overflow: scroll;
+  overflow-x: hidden;
+  scrollbar-width: 3px;
+  scrollbar-color: rgba(0, 0, 0, 0.589);
+}
 
 .pokeSection p {
   text-align: left;
@@ -476,5 +475,360 @@ scrollbar-color: rgba(0, 0, 0, 0.589);}
   box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
     rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
     rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
-    z-index: 5;
+  z-index: 5;
+}
+@media screen and (max-width: 1000px) {
+  .Pokemon .pokeSection {
+    background-color: rgba(0, 0, 0, 0.692);
+    min-height: 90vh;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+  }
+  .Pokemon .pokeSection img {
+    width: 100px;
+  }
+  .pokeSection .HWdiv {
+    top: -101px;
+    font-size: 6px;
+  }
+  .Pokemon .pokeSection figure {
+    width: 270px;
+    height: 180px;
+  }
+  .pokeSection section h3 {
+    width: 15%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: capitalize;
+    font-size: 6px;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.788);
+  }
+  .pokeSection section h2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: capitalize;
+    font-size: 10px;
+    padding-right: 10px;
+    text-shadow: 1px 1px 1px rgba(15, 10, 2, 0.788);
+  }
+  .pokeSection .mainDivPK {
+    height: 90%;
+    margin: 5% 0;
+    gap: 1%;
+    display: flex;
+    color: rgb(14, 8, 1);
+    text-shadow: 1px 1px 1px rgba(119, 116, 110, 0.788);
+  }
+  .pokeSection .imgDivPK {
+    width: 40%;
+  }
+  .pokeSection .statsDivPK {
+    width: 65%;
+    position: relative;
+    bottom: 14px;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.438);
+  }
+  .pokeSection .ulstatsDiv ul li {
+    font-size: 5px;
+    letter-spacing: -0.5px;
+    text-transform: capitalize;
+    line-height: 10px;
+    padding-left: 5px;
+  }
+  .pokeSection .statsDivPK h4 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2% 0;
+    padding-top: 0px;
+    font-size: 7px;
+  }
+  .pokeSection .habdivPK {
+    display: flex;
+    justify-content: space-around;
+    padding-left: 10px;
+  }
+  .statsUl {
+    width: 40%;
+  }
+  .pokeSection .habdivPK div {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 0px;
+    align-items: center;
+  }
+  .pokeSection .habdivPK div h5 {
+    font-size: 5px;
+  }
+  .pokeSection .ulstatsDiv .movesUl li {
+    font-size: 5px;
+    padding-bottom: 2px;
+    width: 110%;
+    padding-right: 10px;
+  }
+  .movesUl {
+    height: 90px;
+    overflow: scroll;
+    overflow-x: hidden;
+    scrollbar-width: 3px;
+    scrollbar-color: rgba(0, 0, 0, 0.589);
+  }
+
+  .pokeSection p {
+    text-align: left;
+    width: 70px;
+    height: 80px;
+    font-size: 5px;
+    position: absolute;
+    display: none;
+    color: rgb(182, 54, 54);
+    background-color: white;
+    padding: 0.1rem;
+    border-radius: 5px;
+    overflow: scroll;
+    overflow-x: hidden;
+  }
+  .pokeSection .habdivPK div:hover p {
+    display: flex;
+    position: absolute;
+    top: 45%;
+  }
+  .Pokemon nav img {
+    width: 20px;
+  }
+  .Pokemon .youPokemon figure {
+    margin-top: 1rem;
+    padding-bottom: 0.5rem;
+    width: 100%;
+    display: flex;
+    gap: 3rem;
+    align-items: center;
+    justify-content: center;
+    height: 150px;
+    background: rgba(56, 152, 248, 0.37);
+    background: linear-gradient(
+      90deg,
+      rgba(56, 152, 248, 0.322) 0%,
+      rgba(30, 141, 43, 0.438) 28%,
+      rgba(9, 27, 54, 0.301) 51%,
+      rgba(108, 58, 58, 0.288) 76%,
+      rgba(176, 88, 160, 0.281) 100%
+    );
+  }
+  
+  .Pokemon .opPokemon figure {
+    margin-top: 1rem;
+    padding-bottom: 0.5rem;
+    padding-left: 4rem;
+    display: flex;
+    gap: 3rem;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 150px;
+    background: rgba(56, 152, 248, 0.37);
+    background: linear-gradient(
+      90deg,
+      rgba(56, 152, 248, 0.322) 0%,
+      rgba(30, 141, 43, 0.438) 28%,
+      rgba(9, 27, 54, 0.301) 51%,
+      rgba(108, 58, 58, 0.288) 76%,
+      rgba(176, 88, 160, 0.281) 100%
+    );
+  }
+  .searchPKtype {
+    width: 10vw;
+    font-family: "pokemon";
+    background: rgb(56, 153, 248);
+    background: linear-gradient(
+      90deg,
+      rgba(56, 153, 248, 1) 0%,
+      rgba(30, 141, 43, 1) 28%,
+      rgba(9, 27, 54, 1) 51%,
+      rgba(108, 58, 58, 1) 76%,
+      rgba(176, 88, 160, 1) 100%
+    );
+    margin-top: 0.4rem;
+    margin-right: 3vw;
+    margin-left: 1vw;
+  }
+  .searchPKgen {
+    width: 10vw;
+    font-family: "pokemon";
+    background: rgb(56, 153, 248);
+    background: linear-gradient(
+      90deg,
+      rgba(56, 153, 248, 1) 0%,
+      rgba(30, 141, 43, 1) 28%,
+      rgba(9, 27, 54, 1) 51%,
+      rgba(108, 58, 58, 1) 76%,
+      rgba(176, 88, 160, 1) 100%
+    );
+    margin-top: 0.4rem;
+    margin-right: 3vw;
+    margin-left: 1vw;
+  }
+  .searchPKid {
+    width: 15vw;
+    font-family: "pokemon";
+    background: rgb(56, 153, 248);
+    background: linear-gradient(
+      90deg,
+      rgba(56, 153, 248, 1) 0%,
+      rgba(30, 141, 43, 1) 28%,
+      rgba(9, 27, 54, 1) 51%,
+      rgba(108, 58, 58, 1) 76%,
+      rgba(176, 88, 160, 1) 100%
+    );
+    margin-top: 0.4rem;
+  }
+  .nav2Poke input {
+    background: rgb(56, 153, 248);
+    background: linear-gradient(
+      90deg,
+      rgba(56, 153, 248, 1) 0%,
+      rgba(30, 141, 43, 1) 28%,
+      rgba(9, 27, 54, 1) 51%,
+      rgba(108, 58, 58, 1) 76%,
+      rgba(176, 88, 160, 1) 100%
+    );
+    font-family: "pokemon";
+    margin-top: 0.4rem;
+    width: 20vw;
+  }
+  .vs button {
+    font-family: "arcade";
+    color: gold;
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+    font-size: 10px;
+  }
+  .nav1Poke h3 {
+    font-size: 10px;
+  }
+  .nav1Poke h2 {
+    font-size: 10px;
+  }
+  .fightPokemons {
+    background-color: rgb(143, 11, 11) !important;
+    width: 90px;
+    height: 70px;
+    border: 2px solid rgb(255, 174, 0) !important;
+    color: rgb(207, 150, 44) !important;
+    border-radius: 25px;
+    filter: brightness(150%);
+    position: absolute;
+    box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset,
+      rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset,
+      rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px,
+      rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px,
+      rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+  }
+  .Pokemon .youPokemon img {
+    transform: scale(1);
+  }
+  .Pokemon .opPokemon img {
+    transform: scale(1);
+  }
+  .divHeader {
+    font-size: 9px;
+  }
+}
+@media screen and (max-width:550px) {
+  .nav1Poke button {
+    font-size: 7px;
+    padding: 0.2rem;
+    width: 50px !important;
+  }
+  .nav1Poke h3 {
+    font-size: 7px;
+  }
+  .divHeader {
+    font-size: 6px;
+  }
+  .divHeader figure{
+    gap: 0.3rem !important;
+  }
+  .randomButton1 {
+    font-size: 10px;
+    padding: 5px 8px;
+  }
+  .randomButton2 {
+    font-size: 10px;
+    padding: 5px 8px;
+  }
+}
+@media screen and (max-width:370px) {
+  .divHeader img {
+    width: 40px;
+  }
+  .divHeader {
+    font-size: 5px;
+  }
+  .fightPokemons {
+    background-color: rgb(143, 11, 11) !important;
+    width: 50px;
+    height: 30px;
+    border: 2px solid rgb(255, 174, 0) !important;
+    color: rgb(207, 150, 44) !important;
+    border-radius: 25px;
+    filter: brightness(150%);
+    position: absolute;
+    box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset,
+      rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset,
+      rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px,
+      rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px,
+      rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+  }
+  .nav2Poke {
+    font-size: 10px;
+  }
+  .nav1Poke button {
+    font-size: 5px;
+    padding: 0.2rem;
+    width: 40px !important;
+  }
+  .nav1Poke h3 {
+    font-size: 6px;
+  }
+  .nav1Poke h2 {
+    font-size: 6px;
+  }
+}
+@media screen and (max-height:600px) {
+  .nav1Poke {
+    padding: 1px 32px !important;
+  }
+  .nav2Poke {
+    padding: 2px 32px !important;
+  }
+  .divHeader {
+    height: 100px !important;
+  }
+  .divHeader figure{
+    height: 60px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  .divHeader div {
+    padding: 0 !important;
+  }
+  .nav2Poke {
+    font-size: 10px;
+  }
+  .nav2Poke select {
+    font-size: 9px !important;
+  }
+  .nav2Poke input {
+    font-size: 9px !important;
+  }
+  .navPokeSticky {
+    margin-top: 100px;
+  }
 }
