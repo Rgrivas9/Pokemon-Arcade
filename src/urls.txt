@@ -1,0 +1,17 @@
+github logo https://res.cloudinary.com/di0zpa5yw/image/upload/v1675183434/gamesHub/github_cxjker.png
+vercel logo https://res.cloudinary.com/di0zpa5yw/image/upload/v1675183434/gamesHub/vercel_xqulbz.png
+paint https://res.cloudinary.com/di0zpa5yw/image/upload/v1675189215/gamesHub/paint-palette_hgwh5c.png
+ico https://res.cloudinary.com/di0zpa5yw/image/upload/v1675200689/gamesHub/maquina-de-arcade_t9iwgd.png
+poke https://res.cloudinary.com/di0zpa5yw/image/upload/v1675262466/gamesHub/pokebola_otj1s7.png
+exit https://res.cloudinary.com/di0zpa5yw/image/upload/v1675264883/gamesHub/salida_bspcsc.png
+info https://res.cloudinary.com/di0zpa5yw/image/upload/v1675265110/gamesHub/info_gkkmvw.png
+logout https://res.cloudinary.com/di0zpa5yw/image/upload/v1675277789/gamesHub/cerrar-sesion_npnjo3.png
+bg battle https://res.cloudinary.com/di0zpa5yw/image/upload/v1675554181/gamesHub/images_xoyjda.png
+begin battle https://res.cloudinary.com/di0zpa5yw/video/upload/v1675677596/gamesHub/begin_cdtvuf.mp3
+battle music https://res.cloudinary.com/di0zpa5yw/video/upload/v1675677600/gamesHub/battle_k68rci.mp3
+victory audio https://res.cloudinary.com/di0zpa5yw/video/upload/v1675680188/gamesHub/victory_blkf4g.mp3
+lavanda https://res.cloudinary.com/di0zpa5yw/video/upload/v1675681181/gamesHub/lavanda_u5d0z7.mp3
+spinner https://res.cloudinary.com/di0zpa5yw/image/upload/v1675693289/gamesHub/mewgif_mx5wq6.gif
+gif space https://res.cloudinary.com/di0zpa5yw/image/upload/v1675694049/gamesHub/g1dIhn_oajzb2.gif
+pikachu video https://res.cloudinary.com/di0zpa5yw/video/upload/v1675961751/gamesHub/introPK_q6abpo.mp4
+mew https://res.cloudinary.com/di0zpa5yw/image/upload/v1676019747/gamesHub/43f87bf85fd8ec237f5ce8af1634692f_l0jwoi.gif

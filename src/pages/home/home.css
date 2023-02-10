@@ -1,0 +1,165 @@
+.exitButton {
+  border: none;
+  background-color: rgba(0, 0, 0, 0);
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 72px;
+  height: 5vh;
+  border-radius: 3px;
+}
+.exitButton img {
+  width: 45px;
+}
+.letsplay {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 300px;
+  font-family: "arcade";
+  text-align: center;
+  color: rgba(48, 28, 2, 0.952);
+  text-shadow: 1px 1px 1px white;
+}
+.exitButton:hover {
+  filter: invert(100%);
+  background-color: rgb(160, 12, 128);
+}
+.pokemonFigure {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  font-family: "arcade";
+  text-align: center;
+  color: rgba(48, 28, 2, 0.952);
+  text-shadow: 1px 1px 1px white;
+  gap: 2vh;
+  background-color: rgba(0, 0, 0, 0.075);
+  padding: 1rem;
+  border-radius: 10px;
+}
+.pokemonFigure img {
+  width: 300px;
+  border-radius: 10px;
+}
+.figureimg:hover {
+  background-color: rgba(182, 146, 146, 0.295);
+  filter: brightness(120%);
+  padding: 5px;
+}
+.infoButton {
+  position: absolute;
+  top: -20px;
+  right: -20px;
+  border: none;
+  background-color: rgba(0, 0, 0, 0);
+  filter: grayscale(100);
+}
+
+.difficultyHome {
+  font-family: "arcade";
+  text-align: center;
+  color: rgba(48, 28, 2, 0.952);
+  text-shadow: 1px 1px 1px white;
+  padding: 0.3rem 0.7rem;
+  border: 2px solid gold;
+  background-color: rgba(0, 0, 0, 0.418);
+  border-radius: 3px;
+  position: absolute;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+.difficultyHome:hover {
+  background-color: gold;
+}
+.pokemonFigure div {
+  display: flex;
+  width: 100%;
+  justify-content: flex-start;
+  position: relative;
+  gap: 5%;
+}
+.coverHome {
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  z-index: 5;
+  transition: all 0.5s ease-in-out;
+  position: absolute;
+}
+.nocoverHome {
+    opacity: 0%;
+}
+@media screen and (max-height: 700px) {
+  .letsplay {
+    font-size: 11px;
+  }
+  .exitButton img {
+    width: 25px;
+  }
+  .pokemonFigure img {
+    width: 200px;
+  }
+  .pokemonFigure {
+    font-size: 10px;
+    padding: 0.2rem;
+  }
+  .difficultyHome {
+    height: 20px;
+    width: 50px;
+    font-size: 10px;
+  }
+}
+@media screen and (max-width: 440px) {
+  .letsplay {
+    font-size: 11px;
+  }
+  .exitButton img {
+    width: 25px;
+  }
+  .pokemonFigure img {
+    width: 200px;
+  }
+  .pokemonFigure {
+    font-size: 10px;
+    padding: 0.2rem;
+  }
+  .difficultyHome {
+    height: 20px;
+    width: 50px;
+    font-size: 10px;
+  }
+}
+.infoButton img {
+  width: 20px;
+}
+@media screen and (max-height: 400px) {
+  .pokemonFigure img {
+    width: 150px;
+  }
+  .pokemonFigure {
+    font-size: 8px;
+  }
+  .infoButton img {
+    width: 14px;
+  }
+  .infoButton {
+    top: -7px;
+    right: -10px;
+  }
+  .difficultyHome {
+    height: 18px;
+    width: 40px;
+    font-size: 8px;
+  }
+}
+.infoButton:hover {
+  filter: grayscale(0);
+  padding: 0;
+}

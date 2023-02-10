@@ -1,0 +1,11 @@
+@font-face {
+    font-family: "arcade";
+    src: url("../../ka1.ttf");
+}
+@font-face {
+    font-family: "pokemon";
+    src: url("../../PokemonClassic.ttf");
+}
+.hidden {
+    display: none !important;
+}
