@@ -265,6 +265,15 @@
   .attackNav div h5{
     font-size: 6px !important;
   }
+  .resultBattle {
+    font-size: 12px;
+  }
+  .resultBattleop {
+    font-size: 12px;
+  }
+  .winspk {
+    font-size: 13px;
+  }
 }
 @media screen and (max-width:480px) {
   .mainDivOp img {
