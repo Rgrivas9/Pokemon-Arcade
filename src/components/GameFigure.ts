@@ -3,7 +3,6 @@ import { getItem } from "../utils/localStorage/getItem";
 import { setItem } from "../utils/localStorage/setItem";
 import { ButtonEl, DivEl, HeadingEl, ImgEl } from "./HTMLelements";
 import { Pokemon } from "../utils/fetch/data";
-import { ImgButton } from "./buttons/imgButton";
 
 export const GameFigure = (
   clase: string,
@@ -13,20 +12,13 @@ export const GameFigure = (
 ): HTMLElement => {
   const record: string[] = getItem(`${getItem("userPK")}records`).split(',')
   const fig: HTMLElement = document.createElement("figure");
-  const infoButton: HTMLButtonElement = ImgButton(
-    "infoButton",
-    "",
-    "",
-    "https://res.cloudinary.com/di0zpa5yw/image/upload/v1675265110/gamesHub/info_gkkmvw.png",
-    "Info icon"
-  );
+
   const img: HTMLImageElement = ImgEl("figureimg", src, `${name} image`);
   const div: HTMLDivElement = DivEl("");
   const h2: HTMLHeadingElement = HeadingEl(2, "", name);
   const score: HTMLHeadingElement = HeadingEl(3, `${name}score`, "");
   record[0]=='Easy' ? score.innerHTML=`Record: ${record[1]}` : score.innerHTML=`Record: ${record[2]}` 
   const difficulty: HTMLButtonElement = ButtonEl("difficultyHome", `${record[0]}`);
-  fig.appendChild(infoButton);
   fig.appendChild(img);
   fig.appendChild(h2);
   div.appendChild(score);

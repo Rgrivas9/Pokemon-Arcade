@@ -77,6 +77,7 @@ export const login = (pokemonList: Pokemon[]): void => {
   const h1: HTMLHeadElement = HeadingEl(1, "h1Login", "Pokemon arcade");
   const divInput: HTMLDivElement = DivEl("divLogin");
   const input: HTMLInputElement = InputEl("inputLogin", "Introduce tu nombre");
+  input.removeAttribute('readonly')
   input.value = getItem("userPK");
   const logout: HTMLButtonElement = ImgButton(
     "logoutLogin",

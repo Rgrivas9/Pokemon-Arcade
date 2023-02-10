@@ -15,6 +15,10 @@ export const startlogIn = (
     const btnSwitch = document.querySelector<HTMLButtonElement>(
       ".switchPrincipal"
     ) as HTMLButtonElement;
+    const loginInput = document.querySelector<HTMLInputElement>(
+      ".inputLogin"
+    ) as HTMLInputElement;
+    loginInput.setAttribute('readonly','true')
     btnSwitch.setAttribute("disabled", "true");
     setItem("userPK", input);
     const startBtn = document.querySelector<HTMLButtonElement>(
