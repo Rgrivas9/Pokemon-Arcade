@@ -104,7 +104,7 @@ export const login = (pokemonList: Pokemon[]): void => {
 
   const anchor1: HTMLAnchorElement = ImgAnchor(
     "github",
-    "https://github.com/Rgrivas9",
+    "https://github.com/Rgrivas9/Pokemon-arcade",
     "https://res.cloudinary.com/di0zpa5yw/image/upload/v1675183434/gamesHub/github_cxjker.png",
     "Github icon",
     "GitHub",
