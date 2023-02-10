@@ -14,8 +14,9 @@ import { getItem } from "../../utils/localStorage/getItem";
 import { ImgAnchor } from "../../components/buttons/ImgAnchor";
 import { Pokemon } from "../../utils/fetch/data";
 import { ImgButton } from "../../components/buttons/imgButton";
+import { globalRandomNumber } from "../../utils/other/randomNumber";
 
-export const home = (pokemonList: Pokemon[]): void => {
+export const home = (pokemonList: Pokemon[],types:string[][]): void => {
   /* ---------------------------------------------------SETEAMOS EL LUGAR */
   const previous: string = getItem("pagePK");
   setItem("pagePK", "home");
@@ -95,4 +96,13 @@ export const home = (pokemonList: Pokemon[]): void => {
   footer.appendChild(anchor2);
   /* ------------------------------------------------------LISTENERS */
   exitBtn.addEventListener("click", () => login(pokemonList));
+  btnSwitch.addEventListener("click", () => {
+    const color:string[]=types[globalRandomNumber(types.length) - 1]
+    let colour:string=''
+    color.length==1 ? colour=color[0] : colour=color.join('')
+    body.setAttribute('class',colour)
+    const record: string[] = getItem(`${getItem("userPK")}records`).split(',')
+    record[3]=colour
+    setItem(`${getItem("userPK")}records`,record.toString())
+  });
 };

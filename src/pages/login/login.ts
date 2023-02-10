@@ -17,17 +17,40 @@ import { logOut } from "../../utils/events/logOut";
 import { startlogIn } from "../../utils/events/startlogIn";
 import { getItem } from "../../utils/localStorage/getItem";
 import { Pokemon } from "../../utils/fetch/data";
+import { globalRandomNumber } from "../../utils/other/randomNumber";
 
-export const login = (pokemonList:Pokemon[]): void => {
+export const login = (pokemonList: Pokemon[]): void => {
   /* ---------------------------------------------------------RESETEAMOS EL BODY */
   const body = document.querySelector<HTMLBodyElement>(
     "body"
   ) as HTMLBodyElement;
   clean(body);
   /* ---------------------------------------------------------SETEAMOS EL COLOR ELEGIDO POR EL USUARIO */
-  const record: string = getItem(`${getItem("userPK")}records`)
-  record ? body.setAttribute("class", record.split(',')[3]) : body.setAttribute("class", "bugpoison")
-  
+  const typelist: string[][] = [];
+  const types: string[][] = [];
+  for (const pokemon of pokemonList) {
+    typelist.push(pokemon.type);
+  }
+  let index = 0;
+  typelist.sort();
+  for (const type of typelist) {
+    index++;
+    if (index != typelist.length) {
+      if (type[0] !== typelist[index][0] || type[1] !== typelist[index][1]) {
+        types.push(type);
+      }
+    }
+  }
+  console.log(types);
+  const record: string = getItem(`${getItem("userPK")}records`);
+  if (record) {
+    body.setAttribute("class", record.split(",")[3]);
+  } else {
+    const color:string[]=types[globalRandomNumber(types.length) - 1]
+    color.length==1 ? body.setAttribute('class',color[0]) : body.setAttribute('class',color.join(''))
+    color.length==1 ? setItem('colorPK',color[0]) : setItem('colorPK',color.join(''))
+  }
+
   /* ---------------------------------------------------------SETEAMOS EL LUGAR EN EL LOCAL STORAGE */
   setItem("pagePK", "login");
   /* ---------------------------------------------------------CREAMOS EL HEADER, MAIN Y FOOTER */
@@ -68,7 +91,7 @@ export const login = (pokemonList:Pokemon[]): void => {
   divInput.appendChild(logout);
   checkUser([input], [welcome, logout]);
   const startButton: HTMLButtonElement = ButtonEl("startLogin", "Start");
-  startButton.removeAttribute('disabled')
+  startButton.removeAttribute("disabled");
   main.appendChild(h1);
   main.appendChild(divInput);
   main.appendChild(startButton);
@@ -92,6 +115,16 @@ export const login = (pokemonList:Pokemon[]): void => {
   footer.appendChild(anchor1);
   footer.appendChild(anchor2);
   /* ---------------------------------------------------------LISTENERS */
-  startButton.addEventListener("click", () => startlogIn(input.value,main,logout,pokemonList));
+  startButton.addEventListener("click", () =>{
+    btnSwitch.setAttribute('disabled','true')
+    startlogIn(input.value, main, logout, pokemonList,types)}
+  );
   logout.addEventListener("click", () => logOut([input], [welcome, logout]));
+  btnSwitch.addEventListener("click", () => {
+    const color:string[]=types[globalRandomNumber(types.length) - 1]
+    let colour:string=''
+    color.length==1 ? colour=color[0] : colour=color.join('')
+    body.setAttribute('class',colour)
+    setItem('colorPK',colour)
+  });
 };

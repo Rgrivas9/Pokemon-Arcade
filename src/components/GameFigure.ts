@@ -41,6 +41,8 @@ export const GameFigure = (
     setItem(`${getItem("userPK")}records`,record.toString()) 
     record[0]=='Easy' ? score.innerHTML=`Record: ${record[1]}` : score.innerHTML=`Record: ${record[2]}`
   });
-  img.addEventListener('click',()=>pokeapi(pokemonList))
+  img.addEventListener('click',()=>{
+    setItem('PKDif',record[0])
+    pokeapi(pokemonList)})
   return fig
 };

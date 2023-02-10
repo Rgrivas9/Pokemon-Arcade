@@ -13,6 +13,8 @@ import { globalRandomNumber } from "../../utils/other/randomNumber";
 import { home } from "../home/home";
 import { figurePokemon } from "../../components/figurePokemon";
 import { clean } from "../../utils/other/clean";
+import { getItem } from "../../utils/localStorage/getItem";
+import { setItem } from "../../utils/localStorage/setItem";
 
 export const pokeapi = (pokemonList: Pokemon[]) => {
   const body = document.querySelector<HTMLBodyElement>(
@@ -66,22 +68,11 @@ export const pokeapi = (pokemonList: Pokemon[]) => {
   const difficultyBtn: HTMLButtonElement = document.createElement("button");
   let pKDif: string = "";
   pKDif = pKDif += "init";
-  localStorage.getItem("PKDif")
-    ? (pKDif = localStorage.getItem("PKDif") as string)
-    : localStorage.setItem("PKDif", "Easy");
-  pKDif = localStorage.getItem("PKDif") as string;
-  let PKRecordEASY: string = "";
-  PKRecordEASY = PKRecordEASY += "init";
-  localStorage.getItem("PKRecordEasy")
-    ? (PKRecordEASY = localStorage.getItem("PKRecordEasy") as string)
-    : localStorage.setItem("PKRecordEasy", "0000");
-  PKRecordEASY = localStorage.getItem("PKRecordEasy") as string;
-  let PKRecordHARD: string = "";
-  PKRecordHARD = PKRecordHARD += "init";
-  localStorage.getItem("PKRecordHard")
-    ? (PKRecordHARD = localStorage.getItem("PKRecordHard") as string)
-    : localStorage.setItem("PKRecordHard", "0000");
-  PKRecordHARD = localStorage.getItem("PKRecordHard") as string;
+  const record: string[] = getItem(`${getItem("userPK")}records`).split(',')
+  localStorage.setItem("PKDif",record[0])
+  localStorage.setItem("PKRecordEasy",record[1])
+  localStorage.setItem("PKRecordHard",record[2])
+  
   difficultyBtn.innerHTML = localStorage.getItem("PKDif") as string;
   difficultyBtn.addEventListener("click", () => {
     localStorage.getItem("PKDif") == "Easy"
@@ -130,11 +121,15 @@ export const pokeapi = (pokemonList: Pokemon[]) => {
   //const scroll=()=>{console.log('scroll')}
   returnBtn.addEventListener("click", () => {
     if (localStorage.getItem("Pokeapi") == "true") {
+      record[0]=getItem('PKDif')
+      record[1]=getItem('PKRecordEasy')
+      record[2]=getItem('PKRecordHard')
+      setItem(`${getItem("userPK")}records`,record.toString())
       body.removeAttribute("class");
       body.setAttribute("id", "principalB");
       body.innerHTML = "";
       window.removeEventListener("scroll", stickyPK);
-      home(pokemonList);
+      home(pokemonList,types);
     }
     if (localStorage.getItem("Pokeapi") == "false") {
       body.removeAttribute("class");
@@ -153,6 +148,9 @@ export const pokeapi = (pokemonList: Pokemon[]) => {
             `PKRecord${localStorage.getItem("PKDif") as string}`,
             localStorage.getItem("scorePoke") as string
           );
+          record[1]=getItem('PKRecordEasy')
+          record[2]=getItem('PKRecordHard')
+          setItem(`${getItem("userPK")}records`,record.toString())
         }
       }
       difficultyBtn.removeAttribute("disabled");
