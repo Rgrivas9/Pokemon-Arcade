@@ -18,6 +18,7 @@
 }
 .nav1Poke h3 {
   font-size: 18px;
+  color: gold;
 }
 .Pokemon nav {
   display: flex;
@@ -208,6 +209,10 @@
   margin-top: 0.4rem;
   width: 38vw;
 }
+.h2pPK {
+  z-index: 6;
+  top: 50px;
+}
 @media screen and (max-width: 480px) {
   .nav2Poke input {
     width: 50vw;
@@ -217,6 +222,9 @@
   }
   .searchPKtype option {
     font-size: 10px;
+  }
+  .h2pPK {
+    width: 200px !important;
   }
 }
 @media screen and (min-width: 1000px) {
@@ -239,6 +247,14 @@
 .nav1Poke h2 {
   display: flex;
   align-items: center;
+  text-align: center;
+  color: gold;
+}
+.emptyFig1h2 {
+  color: gold;
+}
+.emptyFig2h2 {
+  color: gold;
 }
 .nav1Poke div button {
   height: 70%;
@@ -297,6 +313,7 @@
   align-items: center;
   padding-right: 65px;
   background-color: rgba(151, 7, 7, 0.185);
+  color: rgb(133, 73, 6);
 }
 .pokeSection section h3 {
   width: 15%;
