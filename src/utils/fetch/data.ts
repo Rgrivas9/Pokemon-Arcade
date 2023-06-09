@@ -40,12 +40,14 @@ export const getPokemons = async (n:number,m:number) => {
   div.innerHTML='<p>Cargando...</>'
   div.appendChild(img)
   body.appendChild(div)
-  const pokemonList: Pokemon[] = [] as Pokemon[];
+  const promises = []
   while (n < m) {
     n++;
-    const pokemon: Pokemon = await character(n);
-    pokemonList.push(pokemon);
+    const pokemon: Promise<Pokemon> = character(n);
+    promises.push(pokemon);
   }
+  const pokemonListResponse = await Promise.allSettled(promises)
+  const pokemonList: Pokemon[] = pokemonListResponse.map((promise: any)=>promise.value);
   body.removeChild(div)
   return pokemonList;
 };
